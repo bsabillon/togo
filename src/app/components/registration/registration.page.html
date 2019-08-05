@@ -21,9 +21,13 @@
   <ion-input  type="password" [(ngModel)]="password" name="password"></ion-input>
 </ion-item>
 <br>
+<ion-item>
+    <ion-label >Date of Birth</ion-label>
+    <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+  </ion-item>  
+  <br>
 <ion-button color="secondary" expand="block" (click)="OnSubmitRegister()">Registrarse</ion-button>
 <br>
 <p text-center routerLink="/login">Ya tengo cuenta</p>
-
 
 </ion-content>
