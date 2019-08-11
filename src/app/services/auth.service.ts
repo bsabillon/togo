@@ -8,14 +8,21 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  public user: user;
-  public endpoint = 'http://localhost:3000';
+  public User: user;
+  public endpoint = 'https://togo01.herokuapp.com';
 
   constructor(private http: HttpClient, public router: Router) { }
 
+  postNewUser() {
+  }
+
+  getUserByEmail(email: string) {
+    return this.http.get(`${this.endpoint}/user/${email.toLowerCase()}`);
+  }
+
   signInIfUserExists() {
-    if (localStorage.getItem('user ')) {
-      this.user = JSON.parse(localStorage.getItem('user'));
+    if (localStorage.getItem('user')) {
+      this.User = JSON.parse(localStorage.getItem('user'));
       this.router.navigate(['/home']);
       console.log(localStorage.getItem('user'));
     } else {
@@ -26,17 +33,7 @@ export class AuthService {
   signOut() {
     this.router.navigate(['/login']);
     localStorage.removeItem('user');
+    
   }
-
   
-  postNewUser(u: { email: string; name: string; password: string }) {
-
-    return this.http.post(`${this.endpoint}/newuser`, u);
-
-  }
-
-  getUserByEmail(email: string) {
-    return this.http.get(`${this.endpoint}/user/${email.toLowerCase()}`);
-  }
-
 }

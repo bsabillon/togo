@@ -1,24 +1,29 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title text-center>Welcome</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
 
-<ion-content padding>
+<ion-content padding >
   <img class="icon" src="assets/icon/2go.png" alt="">
-  <ion-item>
-    <br>
-      <ion-label position="floating" > Email</ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label position="floating" > Password</ion-label>
-          <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
-          </ion-item>
-          <br>
-
-          <ion-button (click)="onSubmitLog()" expand="block"> Login</ion-button>
-          <ion-button (click)="onSubmitReg()" expand="block"> Sign Up</ion-button>
-          
-          <p text-center routerLink="/registration">No tengo cuenta</p>         
+  
+    <ion-item>
+      <br>
+        <ion-label position="floating" > Email</ion-label>
+        <ion-input type="text" [(ngModel)]="email"  name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" > Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+    </ion-item>
+      <br>
+    <ion-button expand="block" (click)="getUserByEmail()"> Login</ion-button>
+    
+  <p text-center routerLink="/registration">No tengo cuenta</p>         
 </ion-content>

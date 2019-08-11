@@ -5,6 +5,5 @@ export interface store {
     storeAddress: string;
     sellerId: string;
     storeCategory: string;
-     
-
+    inventoryId:string;   
   }
