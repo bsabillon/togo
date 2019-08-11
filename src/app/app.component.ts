@@ -17,29 +17,29 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'menu',
+      title: 'Menu',
       url: '/menu',
       icon: 'list'
     },
     {
-      title: 'offerts',
+      title: 'Offerts',
       url: '/offerts',
-      icon: 'list'
+      icon: 'basket'
     },
     {
-      title: 'profile',
+      title: 'Profile',
       url: '/profile',
-      icon: 'list'
+      icon: 'person'
     },
     {
-      title: 'login',
+      title: 'Login',
       url: '/login',
-      icon: 'list'
+      icon: 'finger-print'
     },
     {
-      title: 'settings',
+      title: 'Settings',
       url: '/settings',
-      icon: 'list'
+      icon: 'cog'
     }
   ];
 

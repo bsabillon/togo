@@ -13,7 +13,7 @@ export class ProfilePage implements OnInit {
 
 
   onLogout() {
-   // this.authService.signOut();
+   this.authService.signOut();
    console.log("logged out"); 
   }
 
