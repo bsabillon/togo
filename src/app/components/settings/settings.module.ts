@@ -6,11 +6,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SettingsPage } from './settings.page';
+import { HomeSettingComponent } from './views/home-setting/home-setting.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SettingsPage
+    component: SettingsPage,
+    children: [
+      {
+        path: '',
+        component: HomeSettingComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
   }
 ];
 
@@ -21,6 +33,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SettingsPage]
+  declarations: [SettingsPage,
+  HomeSettingComponent,
+  ProfileComponent,
+]
 })
 export class SettingsPageModule {}

@@ -1,13 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-searchbar showCancelButton="always"></ion-searchbar>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+      <ion-title slot="start" class="welcome-title"><strong>Hola, </strong><span>Bienvenido</span></ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar showCancelButton="always"></ion-searchbar>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content #pageContent>
+    <h2 class="title">Promotions</h2>
+    <ion-slides pager="true" [options]="slideOpts" class="promotions">
+      <ion-slide *ngFor="let promotion of promotions">
+        <ion-card class="ion-no-padding">
+          <ion-card-content>
+            <img src="http://www.pepsico.cl/images/librariesprovider40/default-album/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg?sfvrsn=1:large" alt="">
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title color="white">NUEVA WOW BOX </ion-card-title>
+            <ion-card-subtitle color="white">Home only</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  
+    <h2 class="title">Assorted Products</h2>
+    <ion-card class="ion-no-padding card-brand">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <div class="logo-brand">
+                <img src="https://files.merca20.com/uploads/2015/05/dove1.jpg" alt="">
+              </div>
+            </ion-col>
+            <ion-col size="10">
+                <ion-row>
+                    <ion-card-title>Producto CC4 (Blanco)</ion-card-title>
+                </ion-row>
+                <ion-row>
+                    <ion-card-subtitle>Cafe CC4</ion-card-subtitle>
+              </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="https://www.nestle-contigo.cl/sites/default/files/nestle/productos/slide-home-productos/cafe.jpg">
+      </ion-card-content>
+      <ion-row class="card-footer">
+          <ion-col size="4">
+            <p>L 200 mínimo</p>
+        </ion-col >
+          <ion-col size="8">
+                <p text-right>30 min</p>
+          </ion-col>
+        </ion-row>
+    </ion-card>
+  </ion-content>
+
+

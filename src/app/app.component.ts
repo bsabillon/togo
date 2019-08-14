@@ -27,11 +27,6 @@ export class AppComponent {
       icon: 'basket'
     },
     {
-      title: 'Profile',
-      url: '/profile',
-      icon: 'person'
-    },
-    {
       title: 'Login',
       url: '/login',
       icon: 'finger-print'

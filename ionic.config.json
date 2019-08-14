@@ -1,5 +1,7 @@
 {
   "name": "togo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

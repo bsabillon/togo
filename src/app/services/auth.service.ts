@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  public User: user;
+  public user: user;
   public endpoint = 'https://togo01.herokuapp.com';
 
   constructor(private http: HttpClient, public router: Router) { }
@@ -22,7 +22,7 @@ export class AuthService {
 
   signInIfUserExists() {
     if (localStorage.getItem('user')) {
-      this.User = JSON.parse(localStorage.getItem('user'));
+      this.user = JSON.parse(localStorage.getItem('user'));
       this.router.navigate(['/home']);
       console.log(localStorage.getItem('user'));
     } else {
@@ -33,7 +33,5 @@ export class AuthService {
   signOut() {
     this.router.navigate(['/login']);
     localStorage.removeItem('user');
-    
   }
-  
 }

@@ -12,7 +12,6 @@ import { user } from '../../models/user';
 export class LoginPage implements OnInit {
   
   alertMessage = '';
-  
 
   constructor(public authService:AuthService, public router: Router) { }
   public email: string ='';
@@ -28,11 +27,11 @@ export class LoginPage implements OnInit {
     this.authService.getUserByEmail(this.email).subscribe((user: user) => {
       if (user.userPassword === this.password) {
         this.router.navigate(['/home']);
-        this.authService.User = user;
+        this.authService.user = user;
         localStorage.setItem('user', JSON.stringify(user));
       } else {
         this.alertMessage = 'incorrect email or password!';
-        console.log('This alert message')
+        console.log('This alert message');
       }
       console.log(user);
     });
