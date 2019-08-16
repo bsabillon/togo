@@ -1,0 +1,31 @@
+.my-custom-menu {
+    --width: 500px;
+}
+
+.md ion-title {
+    text-align: end;
+}
+
+ion-content .title {
+    margin-left: 1rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--ion-color-dark);
+}
+
+ion-toolbar {
+    --padding-end: 10px;
+}
+
+ion-toolbar>ion-text {
+    margin-right: 5px;
+}
+
+.ios .welcome-title {
+    text-align: left;
+}
+
+.welcome-title span {
+    font-weight: 300;
+}

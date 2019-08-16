@@ -6,9 +6,12 @@ const routes: Routes = [
   { path: 'login', loadChildren: './components/login/login.module#LoginPageModule' },
   { path: 'registration', loadChildren: './components/registration/registration.module#RegistrationPageModule' },
   { path: 'home', loadChildren: './components/home/home.module#HomePageModule' },
-  { path: 'offerts', loadChildren: './components/offerts/offerts.module#OffertsPageModule' },
   { path: 'settings', loadChildren: './components/settings/settings.module#SettingsPageModule' },
-  { path: 'menu', loadChildren: './components/menu/menu.module#MenuPageModule' },
+  { path: 'stores-list', loadChildren: './components/stores-list/stores-list.module#StoresListPageModule' },
+  { path: 'categories-list', loadChildren: './components/categories-list/categories-list.module#CategoriesListPageModule' },
+  { path: 'category-details/:id', loadChildren: './components/category-details/category-details.module#CategoryDetailsPageModule' },
+
+
 
 ];
 

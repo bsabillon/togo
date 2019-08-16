@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title slot="start" class="welcome-title"><strong>Products</strong></ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let product of products">
+    <ion-item>
+      <img src="{{product.productPictureURL}}" slot="start">
+      <ion-label>
+        <h2>{{product.productDescription}}</h2>
+        <h3>L {{product.price}}</h3>
+        <p>Available: {{product.productQuantity"}}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

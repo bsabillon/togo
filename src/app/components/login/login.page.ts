@@ -10,15 +10,13 @@ import { user } from '../../models/user';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
   alertMessage = '';
 
-  constructor(public authService:AuthService, public router: Router) { }
-  public email: string ='';
-  public password: string = '';
+  constructor(public authService: AuthService, public router: Router) { }
+  public email = '';
+  public password = '';
 
   ngOnInit() {
-    
 
     this.authService.signInIfUserExists();
   }

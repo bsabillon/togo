@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title slot="start" class="welcome-title"><strong>Stores</strong></ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #pageContent>
+  <ion-item *ngFor="let store of stores">
+    <ion-avatar slot="start">
+      <img src="{{store.storePictureURL}}">
+    </ion-avatar>
+    <ion-text><strong>{{store.storeName}}</strong></ion-text>
+  </ion-item>
+</ion-content>

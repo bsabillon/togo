@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,14 +18,14 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Menu',
-      url: '/menu',
-      icon: 'list'
+      title: 'Stores',
+      url: '/stores-list',
+      icon: 'basket'
     },
     {
-      title: 'Offerts',
-      url: '/offerts',
-      icon: 'basket'
+      title: 'Categories',
+      url: '/categories-list',
+      icon: 'filing'
     },
     {
       title: 'Login',
@@ -43,10 +44,14 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private authService: AuthService
   ) {
     this.initializeApp();
   }
+
+  // tslint:disable-next-line: use-lifecycle-interface
+  
 
   initializeApp() {
     this.platform.ready().then(() => {

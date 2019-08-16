@@ -7,4 +7,4 @@ export interface user {
     userPhone: string;
     userAddress: string;
     sellerId: string;
-  }
+}
