@@ -13,7 +13,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, public router: Router) { }
 
-  postNewUser() {
+  postNewUser(user: user) {
+    return this.http.post(`${this.endpoint}/newuser`,user);
   }
 
   getUserByEmail(email: string) {

@@ -28,4 +28,6 @@ export class DataApiService {
     return this.http.get(`${this.endpoint}/productCategoryId/${id}`);
   }
 
+  
+
 }
