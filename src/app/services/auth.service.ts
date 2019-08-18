@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { user } from '../models/user';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService{
 
   public user: user;
   public endpoint = 'https://togo01.herokuapp.com';
@@ -25,7 +25,6 @@ export class AuthService {
     if (localStorage.getItem('user')) {
       this.user = JSON.parse(localStorage.getItem('user'));
       this.router.navigate(['/home']);
-      console.log(localStorage.getItem('user'));
     } else {
       this.router.navigate(['/login']);
     }

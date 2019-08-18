@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'settings', loadChildren: './components/settings/settings.module#SettingsPageModule' },
   { path: 'stores-list', loadChildren: './components/stores-list/stores-list.module#StoresListPageModule' },
   { path: 'categories-list', loadChildren: './components/categories-list/categories-list.module#CategoriesListPageModule' },
-  { path: 'category-details/:id', loadChildren: './components/category-details/category-details.module#CategoryDetailsPageModule' },
+  { path: 'category-details/:id', loadChildren: './components/category-details/category-details.module#CategoryDetailsPageModule' },  { path: 'store', loadChildren: './components/seller/store/store.module#StorePageModule' },
+
 
 
 

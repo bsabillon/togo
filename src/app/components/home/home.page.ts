@@ -16,7 +16,7 @@ export class HomePage implements OnInit {
 
   constructor(public productsService: ProductsService, public router: Router) { }
 
-  // public userName = localStorage.getItem('user.userName')
+  
 
   ngOnInit() {
     this.getProductsAll();
@@ -25,9 +25,7 @@ export class HomePage implements OnInit {
   getProductsAll() {
     this.productsService.getProducts().subscribe((product: product) => {
       this.productsService.product = product;
-      console.log('Aqui', product);
       this.products = product;
-      console.log('Array', this.products);
     });
   }
 }

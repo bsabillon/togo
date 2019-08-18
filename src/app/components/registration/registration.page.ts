@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { user } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,7 @@ import { user } from 'src/app/models/user';
 })
 export class RegistrationPage implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   name: string;
   lastName: string;
@@ -35,7 +36,9 @@ export class RegistrationPage implements OnInit {
     };
 
     this.authService.postNewUser(user).subscribe((data) => {
-
+      this.router.navigate(['/home']);
+      this.authService.user = user;
+      localStorage.setItem('user', JSON.stringify(user));
       console.log(data);
       
     });

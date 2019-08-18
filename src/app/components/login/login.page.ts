@@ -31,7 +31,6 @@ export class LoginPage implements OnInit {
         this.alertMessage = 'incorrect email or password!';
         console.log('This alert message');
       }
-      console.log(user);
     });
   }
 

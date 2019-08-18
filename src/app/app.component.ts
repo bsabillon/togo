@@ -33,6 +33,11 @@ export class AppComponent {
       icon: 'finger-print'
     },
     {
+      title: 'My Store',
+      url: '/store',
+      icon: 'basket'
+    },
+    {
       title: 'Settings',
       url: '/settings',
       icon: 'cog'

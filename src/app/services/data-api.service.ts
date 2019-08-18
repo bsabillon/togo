@@ -28,6 +28,9 @@ export class DataApiService {
     return this.http.get(`${this.endpoint}/productCategoryId/${id}`);
   }
 
+  postNewProduct(product: product) {
+    return this.http.post(`${this.endpoint}/newproduct`,product);
+  }
   
 
 }
