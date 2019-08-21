@@ -18,7 +18,6 @@ export class CategoryDetailsPage implements OnInit {
    }
 
   ngOnInit() {
-    
   }
 
   ionViewDidEnter() {

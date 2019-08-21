@@ -1,6 +1,6 @@
+import { store } from './../models/store';
 import { productCategory } from './../models/productCategory';
 import { Injectable } from '@angular/core';
-import { store } from '../models/store';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { product } from '../models/product';
@@ -18,6 +18,10 @@ export class DataApiService {
 
   getStores() {
     return this.http.get(`${this.endpoint}/store`);
+  }
+
+  getStoresById(id: string) {
+    return this.http.get((`${this.endpoint}/storeSeller/${id}`));
   }
 
   getCategories() {

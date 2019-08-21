@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let store of stores">
+    <ion-avatar slot="start">
+      <img src="{{store.storePictureURL}}">
+    </ion-avatar>
+    <ion-text><strong>{{store.storeName}}</strong></ion-text>
+  </ion-item>
+</ion-content>

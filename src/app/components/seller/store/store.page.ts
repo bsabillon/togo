@@ -11,44 +11,8 @@ import { DataApiService } from 'src/app/services/data-api.service';
 })
 export class StorePage implements OnInit {
 
-  constructor(public dataApi: DataApiService, public router: Router) { }
-
-  productDescription: string;
-  price: string;
-  productQuantity: number;
-  productPictureURL: string;
-  productCategoryId: number;
-  storeId: number;
-
-
-
+  constructor() { }
 
   ngOnInit() {
   }
-
-  AddProduct(){
-    let product: product = {
-     // productId: null,
-      productDescription: this.productDescription,
-      price: this.price,
-      productQuantity : this.productQuantity,
-      productPictureURL : this.productPictureURL,
-      productCategoryId: this.productCategoryId,
-      storeId :this.storeId,
-    };
-
-    this.dataApi.postNewProduct(product).subscribe((data) => {
-//      this.router.navigate(['/home']);
-      this.dataApi.product = product;
-      localStorage.setItem('product', JSON.stringify(product));
-      console.log(data);      
-    });
-    
-
-  }
-
-
-
-
-
 }
