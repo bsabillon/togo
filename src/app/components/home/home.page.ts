@@ -22,6 +22,7 @@ export class HomePage implements OnInit {
     this.getProductsAll();
   }
 
+  //getProducts
   getProductsAll() {
     this.productsService.getProducts().subscribe((product: product) => {
       this.productsService.product = product;

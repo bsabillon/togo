@@ -19,10 +19,6 @@ export class StorePage implements OnInit {
   productPictureURL: string;
   productCategoryId: number;
   storeId: number;
-
-
-
-
   ngOnInit() {
   }
 
