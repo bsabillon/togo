@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      CheckOut
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius bg-white">
+    <ion-card-content>
+
+      <ion-list class="bg-white" lines="none">
+        <ion-item no-padding>
+            <ion-thumbnail slot="start">
+                <img src="https://jimmyfuentes501.000webhostapp.com/imgTOGO/monitor.png">
+            </ion-thumbnail>
+            <ion-label>
+              <h2 class="fw700">
+                <ion-text color="dark">Teclado</ion-text>
+              </h2>
+              <p>
+                <ion-text color="primary">Teclado Sony</ion-text>
+              </p>
+            </ion-label>
+
+            <ion-badge>L 570</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card no-margin color="primary" class="no-radius">
+    <ion-card-content>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col size="6">
+  
+              <ion-card color="tertiary" no-margin text-center>
+                <ion-card-content>
+                  <ion-text color="dark">Total</ion-text>
+                  <h2 no-margin class="fw700">
+                    <ion-text color="dark">L 560</ion-text>
+                  </h2>
+                </ion-card-content>
+              </ion-card>
+
+            </ion-col>
+            <ion-col size="6">
+              <!-- <ion-text color="secondary" class="text1">Número de Orden</ion-text>
+              <br/>
+              <ion-badge color="light">{{ orderNumber }}</ion-badge> -->
+              <div> 
+                <ion-text color="secondary" class="text1">Tiempo de Envío:</ion-text>
+                <br/>
+                <ion-badge color="light">30 - 60min</ion-badge>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="dark" class="no-radius" no-margin>
+    <ion-card-content>
+
+      <ion-segment color="light">
+        <ion-segment-button value="creditcard">
+          <ion-label color="light">Tarjeta De Credito</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div class="ccFlags">
+        <ion-grid padding>
+          <ion-row>
+            <ion-col no-padding text-center>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item no-padding>
+                <ion-input type="text" color="light" placeholder="Card Holder"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item no-padding>
+                <ion-input placeholder="Card Number" color="light" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item no-padding color="dark">
+                <ion-select placeholder="MM" class="max-width full-width">
+                  <ion-select-option value="01">01</ion-select-option>
+                  <ion-select-option value="02">02</ion-select-option>
+                  <ion-select-option value="03">03</ion-select-option>
+                  <ion-select-option value="04">04</ion-select-option>
+                  <ion-select-option value="05">05</ion-select-option>
+                  <ion-select-option value="06">06</ion-select-option>
+                  <ion-select-option value="07">07</ion-select-option>
+                  <ion-select-option value="08">08</ion-select-option>
+                  <ion-select-option value="09">09</ion-select-option>
+                  <ion-select-option value="10">10</ion-select-option>
+                  <ion-select-option value="11">11</ion-select-option>
+                  <ion-select-option value="12">12</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col  size="4">
+              <ion-item no-padding color="dark">
+                <ion-select placeholder="YY" class="text1">
+                  <ion-select-option value="19">19</ion-select-option>
+                  <ion-select-option value="20">20</ion-select-option>
+                  <ion-select-option value="21">21</ion-select-option>
+                  <ion-select-option value="22">22</ion-select-option>
+                  <ion-select-option value="23">23</ion-select-option>
+                  <ion-select-option value="24">24</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item no-padding>
+                <ion-input placeholder="CVV" color="light" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer class="no-padding">
+  <ion-button size="large" expand="full" color="tertiary" no-margin (click)="checkoutOrder()" class="checkoutButton">
+    <ion-icon slot="start" name="wallet" color="dark"></ion-icon>
+    <ion-text color="dark">CheckOut</ion-text>
+  </ion-button>
+</ion-footer>

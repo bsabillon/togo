@@ -10,13 +10,29 @@
 
 <ion-content>
   <div *ngFor="let product of products">
-    <ion-item>
-      <img src="{{product.productPictureURL}}" slot="start">
-      <ion-label>
-        <h2>{{product.productDescription}}</h2>
-        <h3>L {{product.price}}</h3>
-        <p>Available: {{product.productQuantity}}</p>
-      </ion-label>
-    </ion-item>
+    <ion-card padding [routerLink]="[ '../../product-detail', product.productId ]">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10">
+              <ion-row>
+                <ion-card-title>{{product.productName}}</ion-card-title>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="{{product.productPictureURL}}">
+      </ion-card-content>
+      <ion-row class="card-footer">
+        <ion-col size="4">
+          <p>L {{product.price}}</p>
+        </ion-col>
+        <ion-col size="8">
+          <p text-right>Disponible: {{product.productQuantity}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
   </div>
 </ion-content>

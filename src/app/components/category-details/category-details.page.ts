@@ -1,7 +1,9 @@
+import { CartPage } from './../modal/cart/cart.page';
 import { product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataApiService } from 'src/app/services/data-api.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-category-details',
@@ -13,7 +15,11 @@ export class CategoryDetailsPage implements OnInit {
 
   public products: any = [];
 
-  constructor(private route: ActivatedRoute, public dataApiService: DataApiService, private router: Router) {
+  constructor(private route: ActivatedRoute,
+              public dataApiService: DataApiService,
+              private router: Router,
+              public modalController: ModalController,
+    ) {
     this.categoryListId = this.route.snapshot.params.id;
    }
 
@@ -29,6 +35,13 @@ export class CategoryDetailsPage implements OnInit {
       this.dataApiService.product = product;
       this.products = product;
     });
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: CartPage
+    });
+    return await modal.present();
   }
 
 }

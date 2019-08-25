@@ -22,7 +22,8 @@ export class ProductSettingComponent implements OnInit {
 
   AddProduct() {
     const product: product = {
-     // productId: null,
+      productId: null,
+      productName: null,
       productDescription: this.productDescription,
       price: this.price,
       productQuantity: this.productQuantity,

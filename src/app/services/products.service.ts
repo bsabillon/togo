@@ -15,4 +15,8 @@ export class ProductsService {
   getProducts() {
     return this.http.get(`${this.endpoint}/product`);
   }
+
+  getProductsById(productId: string) {
+    return this.http.get(`${this.endpoint}/product/${productId}`);
+  }
 }

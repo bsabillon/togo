@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title slot="start" class="welcome-title"><strong>Product Detail</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img [src]="productDetail.productPictureURL">
+  <h2><strong>{{productDetail.productName}}</strong></h2>
+  <p>{{productDetail.productDescription}}</p>
+  <ion-item>
+    <ion-chip slot="end" color="success">Stock: {{productDetail.productQuantity}}</ion-chip>
+    <ion-text>L {{productDetail.price}}</ion-text>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-icon name="remove-circle" color="danger" (click)="eraseItemsCart()"></ion-icon></ion-col>
+      <ion-col>{{itemsSelected}}</ion-col>
+      <ion-col><ion-icon name="add-circle" color="success" (click)="addItemsCart()"></ion-icon></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-title>Add <ion-icon name="cart"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
