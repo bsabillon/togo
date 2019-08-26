@@ -1,3 +1,4 @@
+import { PipesModule } from './pipes/pipes.module';
 import { CartPage } from './components/modal/cart/cart.page';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule,
   ],
 
   providers: [

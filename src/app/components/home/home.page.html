@@ -4,7 +4,7 @@
     <ion-title slot="start" class="welcome-title"><strong>ToGo</strong></ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="always"></ion-searchbar>
+    <ion-searchbar showCancelButton="always" animated (ionChange)="search($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content #pageContent>
@@ -26,7 +26,7 @@
   </ion-slides>
 
   <h2 class="title">Assorted Products</h2>
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products | filtro:textoBuscar">
     <ion-card padding [routerLink]="[ '../product-detail', product.productId ]">
       <ion-card-header>
         <ion-grid>

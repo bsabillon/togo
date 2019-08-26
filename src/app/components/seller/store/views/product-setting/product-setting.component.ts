@@ -10,7 +10,7 @@ import { product } from 'src/app/models/product';
 })
 export class ProductSettingComponent implements OnInit {
   productDescription: string;
-  price: string;
+  price: number;
   productQuantity: number;
   productPictureURL: string;
   productCategoryId: number;

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
   public promotions: any = ['1', '2', '3', '4', '5'];
   public method: true;
+  public textoBuscar = '';
 
   public products: any = [];
 
@@ -20,6 +21,10 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getProductsAll();
+  }
+
+  search(event) {
+    this.textoBuscar = event.detail.value;
   }
 
   getProductsAll() {

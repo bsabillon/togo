@@ -16,16 +16,20 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col><ion-icon name="remove-circle" color="danger" (click)="eraseItemsCart()"></ion-icon></ion-col>
+      <ion-col>
+        <ion-icon name="remove-circle" color="danger" (click)="eraseItemsCart()"></ion-icon>
+      </ion-col>
       <ion-col>{{itemsSelected}}</ion-col>
-      <ion-col><ion-icon name="add-circle" color="success" (click)="addItemsCart()"></ion-icon></ion-col>
+      <ion-col>
+        <ion-icon name="add-circle" color="success" (click)="addItemsCart()"></ion-icon>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="secondary">
-    <ion-title>Add <ion-icon name="cart"></ion-icon>
+  <ion-toolbar color="secondary" (click)="addProductCart()">
+    <ion-title>Add <ion-icon name="cart"></ion-icon> (L {{productDetail.price * itemsSelected}})
     </ion-title>
   </ion-toolbar>
 </ion-footer>
