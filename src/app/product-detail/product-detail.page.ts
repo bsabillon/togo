@@ -1,5 +1,6 @@
+import { CartId } from './../models/cartId';
 import { CartPage } from './../components/modal/cart/cart.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { product } from './../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -13,6 +14,7 @@ import { user } from '../models/user';
 })
 export class ProductDetailPage implements OnInit {
   public user: user;
+  public cartId: string;
   public productId: string;
   public productDetail: any = [];
   public productDetailPrice: number;
@@ -23,6 +25,7 @@ export class ProductDetailPage implements OnInit {
     private route: ActivatedRoute,
     public productService: ProductsService,
     public modalController: ModalController,
+    public toastController: ToastController,
     private router: Router,
     ) {
     this.productId = this.route.snapshot.params.id;
@@ -52,18 +55,22 @@ export class ProductDetailPage implements OnInit {
 
   addProductCart() {
     this.user = JSON.parse(localStorage.getItem('user'));
-    this.productService.setProductToCart(this.productId, this.productQuantity, this.user.userEmail).subscribe((data) => {
-      console.log(data);
+    this.productService.getCartIdByEmail(this.user.userEmail).subscribe((cartID: CartId) => {
+      this.cartId = cartID.cartId;
+      this.productService.setProductToCart(this.productId, this.itemsSelected, this.cartId).subscribe((data) => {
+        console.log(data);
+      });
+      this.presentToast();
+      this.router.navigate(['home']);
     });
-    this.presentModal();
   }
 
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: CartPage
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Product added to cart successfully!',
+      duration: 2000
     });
-    return await modal.present();
+    toast.present();
   }
-
 
 }

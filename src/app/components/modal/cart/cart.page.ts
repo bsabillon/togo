@@ -1,3 +1,6 @@
+import { Cart } from './../../../models/cart';
+import { user } from './../../../models/user';
+import { ProductsService } from './../../../services/products.service';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, ModalController, IonItemSliding } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -9,14 +12,22 @@ import { Router } from '@angular/router';
 })
 
 export class CartPage {
+  public user: user;
   totalVal = 0;
+  cartDetails: any = [];
+  id: string;
 
 
   constructor(
     public navCtrl: NavController,
     public route: Router,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private productService: ProductsService
   ) {
+  }
+
+  ionViewWillEnter() {
+    this.getCartDetail();
   }
 
   openCheckout() {
@@ -27,6 +38,35 @@ export class CartPage {
 
   closeModal() {
     this.modalCtrl.dismiss();
+  }
+
+  getCartDetail() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    this.productService.getCartDetailByEmail(this.user.userEmail).subscribe((cart: Cart) => {
+      this.cartDetails = cart;
+    });
+  }
+
+  addItemsCart(cartDetailsId: number, items: number) {
+    items++;
+    this.productService.updateCartItems(cartDetailsId, items).subscribe((data) => {
+      this.getCartDetail();
+    });
+  }
+
+  eraseItemsCart(cartDetailsId: number, items: number) {
+    if (items > 1) {
+      items--;
+      this.productService.updateCartItems(cartDetailsId, items).subscribe((data) => {
+        this.getCartDetail();
+      });
+    }
+  }
+
+  deleteCartItems(cartDetailsId: number) {
+    this.productService.deleteCartItem(cartDetailsId).subscribe((data) => {
+      this.getCartDetail();
+    });
   }
 
 }

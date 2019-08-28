@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'category-details/:id', loadChildren: './components/category-details/category-details.module#CategoryDetailsPageModule' },
   { path: 'store', loadChildren: './components/seller/store/store.module#StorePageModule' },
   { path: 'checkout', loadChildren: './components/checkout/checkout.module#CheckoutPageModule' },
-  { path: 'product-detail/:id', loadChildren: './product-detail/product-detail.module#ProductDetailPageModule' },
+  { path: 'product-detail/:id', loadChildren: './product-detail/product-detail.module#ProductDetailPageModule' },  { path: 'orders', loadChildren: './components/orders/orders.module#OrdersPageModule' },
+
 
 
 

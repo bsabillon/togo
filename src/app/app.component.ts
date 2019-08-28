@@ -28,6 +28,11 @@ export class AppComponent {
       icon: 'filing'
     },
     {
+      title: 'Orders',
+      url: '/orders',
+      icon: 'clipboard'
+    },
+    {
       title: 'Login',
       url: '/login',
       icon: 'finger-print'
@@ -41,7 +46,7 @@ export class AppComponent {
       title: 'Settings',
       url: '/settings',
       icon: 'cog'
-    }
+    },
   ];
 
 

@@ -17,12 +17,33 @@ export class ProductsService {
     return this.http.get(`${this.endpoint}/product`);
   }
 
+  getCartIdByEmail(userEmail: string) {
+    return this.http.get(`${this.endpoint}/cartIdByUser/${userEmail}`);
+  }
+
+  getCartDetailByEmail(userEmail: string) {
+    return this.http.get(`${this.endpoint}/cartDetailsByUser/${userEmail}`);
+  }
+
+  getCountCartItemsByCartId(cartId: string) {
+    return this.http.get(`${this.endpoint}/productCountByCartId/${cartId}`);
+  }
+
+  updateCartItems(cartDetailsId: number, cartQt: number) {
+    const body = ['1'];
+    return this.http.put(`${this.endpoint}/updateCartDetailsQuantity/${cartDetailsId}/${cartQt}`, body);
+  }
+
+  deleteCartItem(cartDetailsId: number) {
+    return this.http.delete(`${this.endpoint}/deleteCartDetails/${cartDetailsId}`);
+  }
+
   getProductsById(productId: string) {
     return this.http.get(`${this.endpoint}/product/${productId}`);
   }
 
-  setProductToCart(productId: string, cartQ: number, userEmail: string) {
-    const body = `{"productId": ${productId}, "cartQuantity": ${cartQ}, "userEmail": "${userEmail}" }`;
+  setProductToCart(productId: string, cartQ: number, cartId: string) {
+    const body = `{"productId": ${productId}, "cartQuantity": ${cartQ}, "cartId": "${cartId}" }`;
     return this.http.post(`${this.endpoint}/addProductToCart`, body, {headers: this.headers});
   }
 }
