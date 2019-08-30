@@ -1,6 +1,10 @@
-import { NgModule } from '@angular/core';
+import { SetAddressComponent } from './views/set-address/set-address.component';
+import { ListAddressComponent } from './views/list-address/list-address.component';
+import { CardsAddComponent } from './views/cards-add/cards-add.component';
+import { CardsListComponent } from './views/cards-list/cards-list.component';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -21,6 +25,22 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'cardsList',
+        component: CardsListComponent
+      },
+      {
+        path: 'cardsAdd',
+        component: CardsAddComponent
+      },
+      {
+        path: 'addressList',
+        component: ListAddressComponent
+      },
+      {
+        path: 'setAddress',
+        component: SetAddressComponent
       }
     ]
   }
@@ -30,12 +50,17 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SettingsPage,
   HomeSettingComponent,
   ProfileComponent,
+  CardsListComponent,
+  CardsAddComponent,
+  ListAddressComponent,
+  SetAddressComponent,
 ]
 })
 export class SettingsPageModule {}

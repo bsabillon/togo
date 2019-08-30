@@ -1,0 +1,46 @@
+<ion-content padding>
+  <form [formGroup]="formGroupCards">
+    <ion-item class="titleItems" lines="none">
+      <ion-back-button defaultHref="../"></ion-back-button>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-text><b>Completar los siguientes datos:</b></ion-text>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Card Holder <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="cardName"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Card Number <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="cardNumber"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Expiration Date <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="expiration"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">CVV <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="cvv"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Description <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="description"></ion-input>
+      </div>
+    </ion-item>
+  </form>
+  <ion-button class="btnSave" color="success" (click)="addNewCard()">Guardar</ion-button>
+</ion-content>

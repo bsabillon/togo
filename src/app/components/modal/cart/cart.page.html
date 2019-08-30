@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="light">
-      <ion-title>Carrito de compras</ion-title>
+    <ion-title>Carrito de compras</ion-title>
     <ion-buttons slot="end">
       <ion-button size="small" shape="round" (click)="closeModal()" color="light">
         <ion-icon slot="icon-only" name="close-circle" color="primary"></ion-icon>
@@ -19,39 +19,40 @@
             <ion-item class="bg-white" lines="none">
 
               <ion-thumbnail slot="start">
-                  <img [src]="cartDetail.productPictureURL" />
+                <img [src]="cartDetail.productPictureURL" />
               </ion-thumbnail>
-                <ion-label>
-                  <h2 class="fw700">
-                    <ion-text color="dark">{{cartDetail.productName}}</ion-text>
-                  </h2>
-                  <ion-grid class="filters" no-padding>
-                    <ion-row>
-                      <ion-col text-center col-2>
-                        <ion-icon name="remove-circle" class="text15" tappable
-                                  color="secondary" (click)="eraseItemsCart(cartDetail.cartDetailsId,cartDetail.cartQuantity)"></ion-icon>
-                      </ion-col>
-                      <ion-col text-center col-3>
-                        <h2 class="text12 fw700">
-                          <ion-text color="primary">{{cartDetail.cartQuantity}}</ion-text>
-                        </h2>
-                      </ion-col>
-                      <ion-col text-center col-2>
-                        <ion-icon name="add-circle" class="text15" tappable color="secondary" (click)="addItemsCart(cartDetail.cartDetailsId,cartDetail.cartQuantity)"></ion-icon>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <div item-right>
-                    <ion-badge color="success">Price: {{cartDetail.price}}</ion-badge>
-                    <ion-badge class="totalProduct">Total: {{cartDetail.price * cartDetail.cartQuantity}}</ion-badge>
-                  </div>
-                </ion-label>
-              </ion-item>
-              <ion-item-options>
-                <ion-item-option color="light" (click)="deleteCartItems(cartDetail.cartDetailsId)">
-                  Eliminar
-                </ion-item-option>
-              </ion-item-options>
+              <ion-label>
+                <h2 class="fw700">
+                  <ion-text color="dark">{{cartDetail.productName}}</ion-text>
+                </h2>
+                <ion-grid class="filters" no-padding>
+                  <ion-row>
+                    <ion-col text-center col-2>
+                      <ion-icon name="remove-circle" class="text15" tappable color="secondary"
+                        (click)="eraseItemsCart(cartDetail.cartDetailsId,cartDetail.cartQuantity)"></ion-icon>
+                    </ion-col>
+                    <ion-col text-center col-3>
+                      <h2 class="text12 fw700">
+                        <ion-text color="primary">{{cartDetail.cartQuantity}}</ion-text>
+                      </h2>
+                    </ion-col>
+                    <ion-col text-center col-2>
+                      <ion-icon name="add-circle" class="text15" tappable color="secondary"
+                        (click)="addItemsCart(cartDetail.cartDetailsId,cartDetail.cartQuantity)"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <div item-right>
+                  <ion-badge color="success">Price: {{cartDetail.price}}</ion-badge>
+                  <ion-badge class="totalProduct">Total: {{cartDetail.price * cartDetail.cartQuantity}}</ion-badge>
+                </div>
+              </ion-label>
+            </ion-item>
+            <ion-item-options>
+              <ion-item-option color="light" (click)="deleteCartItems(cartDetail.cartDetailsId)">
+                Eliminar
+              </ion-item-option>
+            </ion-item-options>
           </ion-item-sliding>
         </ion-list>
 
@@ -66,10 +67,11 @@
             <p>
               <ion-text color="light">Total Order Value</ion-text>
             </p>
-
-            <ion-chip color="dark" class="fw700" outline="true">
-              <ion-label color="light">{{ totalVal + (cartDetails.price * cartDetails.cartQuantity)}}</ion-label>
-            </ion-chip>
+            <div *ngFor="let totalCart of totalCarts">
+              <ion-chip color="dark" class="fw700" outline="true">
+                <ion-label color="light">{{totalCart.total}}</ion-label>
+              </ion-chip>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -1,0 +1,40 @@
+ion-toolbar {
+    --padding-top: 8px;
+}
+
+ion-toolbar > ion-item {
+    text-align: center;
+    justify-items: center;
+}
+
+ion-toolbar {
+    text-align: center;
+    justify-items: center;
+}
+
+ion-content {
+    text-align: center;
+    justify-items: center;
+}
+
+.closeButton {
+    position: fixed;
+    right: 6px;
+    outline: none;
+}
+
+.AddAddressButton {
+    outline: none;
+}
+
+.selectAddress {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.titlePage {
+    position: fixed;
+    width: 70%;
+    text-align: center;
+    left: 15%;
+}

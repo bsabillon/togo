@@ -7,3 +7,7 @@ export interface Cart {
     productPictureURL: string;
 
 }
+
+export interface ITotalCart {
+    total: number;
+}

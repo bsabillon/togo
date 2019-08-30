@@ -1,0 +1,46 @@
+<ion-content padding>
+  <form [formGroup]="formGroupAddress">
+    <ion-item class="titleItems" lines="none">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-text><b>Provide the information below:</b></ion-text>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Address <ion-text color="primary">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="addressDescription"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Phone <ion-text color="primary">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="addressPhone"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">House number
+      </ion-label>
+      <div>
+        <ion-input formControlName="houseNumber"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Reference <ion-text color="primary">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="addressReference"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Address description <ion-text color="primary">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input placeholder="My House" formControlName="addressAlias"></ion-input>
+      </div>
+    </ion-item>
+  </form>
+  <ion-button class="btnSave" color="primary" (click)="saveAddress()">Guardar</ion-button>
+</ion-content>

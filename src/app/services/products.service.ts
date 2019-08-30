@@ -46,4 +46,8 @@ export class ProductsService {
     const body = `{"productId": ${productId}, "cartQuantity": ${cartQ}, "cartId": "${cartId}" }`;
     return this.http.post(`${this.endpoint}/addProductToCart`, body, {headers: this.headers});
   }
+
+  getCartTotal(userEmail: string) {
+    return this.http.get(`${this.endpoint}/cartDetailsTotalByUser/${userEmail}`);
+  }
 }

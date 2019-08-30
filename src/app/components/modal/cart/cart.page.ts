@@ -1,4 +1,4 @@
-import { Cart } from './../../../models/cart';
+import { Cart, ITotalCart } from './../../../models/cart';
 import { user } from './../../../models/user';
 import { ProductsService } from './../../../services/products.service';
 import { Component, ViewChild } from '@angular/core';
@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
 
 export class CartPage {
   public user: user;
-  totalVal = 0;
   cartDetails: any = [];
   id: string;
+  public totalCarts: any = [];
 
 
   constructor(
@@ -27,6 +27,7 @@ export class CartPage {
   }
 
   ionViewWillEnter() {
+    this.getTotalCartItems();
     this.getCartDetail();
   }
 
@@ -43,14 +44,14 @@ export class CartPage {
   getCartDetail() {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.productService.getCartDetailByEmail(this.user.userEmail).subscribe((cart: Cart) => {
-      this.cartDetails = cart;
+    this.cartDetails = cart;
+    this.getTotalCartItems();
     });
   }
 
   addItemsCart(cartDetailsId: number, items: number) {
     items++;
     this.productService.updateCartItems(cartDetailsId, items).subscribe((data) => {
-      this.getCartDetail();
     });
   }
 
@@ -66,6 +67,14 @@ export class CartPage {
   deleteCartItems(cartDetailsId: number) {
     this.productService.deleteCartItem(cartDetailsId).subscribe((data) => {
       this.getCartDetail();
+    });
+  }
+
+  getTotalCartItems() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    this.productService.getCartTotal(this.user.userEmail).subscribe((itotalCart: ITotalCart) => {
+      this.totalCarts = itotalCart;
+      console.log(this.totalCarts);
     });
   }
 
