@@ -36,4 +36,8 @@ export class CheckoutPage implements OnInit {
     this.router.navigate(['']);
   }
 
+
+
+
+  
 }
