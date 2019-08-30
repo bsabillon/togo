@@ -20,6 +20,13 @@ export class HomePage implements OnInit {
   public cartId: string;
   public counterCartItems: string;
   public products: any = [];
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    pagination: false,
+    effect: 'slide',
+    width: 250
+  };
 
   constructor(
     public productsService: ProductsService,
