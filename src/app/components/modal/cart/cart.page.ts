@@ -52,6 +52,7 @@ export class CartPage {
   addItemsCart(cartDetailsId: number, items: number) {
     items++;
     this.productService.updateCartItems(cartDetailsId, items).subscribe((data) => {
+      this.getCartDetail();
     });
   }
 
