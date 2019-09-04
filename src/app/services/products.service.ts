@@ -50,4 +50,15 @@ export class ProductsService {
   getCartTotal(userEmail: string) {
     return this.http.get(`${this.endpoint}/cartDetailsTotalByUser/${userEmail}`);
   }
+
+  makeOrder(cartId: string, addressID: string, cardId: string) {
+    const body = ['1'];
+    return this.http.put(`${this.endpoint}/updateCart/${cartId}/${addressID}/${cardId}`, body);
+  }
+
+  // makeOrder(cartId: string, addressID: string, cardId: string) {
+  //   const body = `{"cartId": ${cartId}, "addressId": ${addressID}, "cardId": "${cardId}" }`;
+  //   return this.http.put(`${this.endpoint}/updateCart`, body, {headers: this.headers});
+  // }
+
 }

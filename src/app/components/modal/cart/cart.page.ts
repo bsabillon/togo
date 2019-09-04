@@ -17,12 +17,11 @@ export class CartPage {
   id: string;
   public totalCarts: any = [];
 
-
   constructor(
     public navCtrl: NavController,
     public route: Router,
     private modalCtrl: ModalController,
-    private productService: ProductsService
+    public productService: ProductsService
   ) {
   }
 
@@ -32,7 +31,7 @@ export class CartPage {
   }
 
   openCheckout() {
-    this.route.navigate(['checkout']);
+    this.route.navigate(['checkout/list-address']);
     this.modalCtrl.dismiss();
     // this.navCtrl.navigateForward('checkout/');
   }

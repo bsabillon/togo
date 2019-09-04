@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      CheckOut
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius bg-white" *ngFor="let cartDetail of cartDetails">
+    <ion-card-content>
+      <ion-list class="bg-white" lines="none">
+        <ion-item no-padding>
+          <ion-thumbnail slot="start">
+            <img [src]="cartDetail.productPictureURL" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2 class="fw700">
+              <ion-text color="dark">{{cartDetail.productName}}</ion-text>
+            </h2>
+            <p>
+              <ion-text color="primary"></ion-text>
+            </p>
+          </ion-label>
+          <ion-badge>L {{cartDetail.price * cartDetail.cartQuantity}}</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid padding>
+    <ion-row>
+      <ion-col size="6">
+
+        <ion-card color="tertiary" no-margin text-center *ngFor="let totalCart of totalCarts">
+          <ion-card-content>
+            <ion-text color="dark">Total</ion-text>
+            <h2 no-margin class="fw700">
+              <ion-text color="dark">L {{totalCart.total}}</ion-text>
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size="6">
+        <div>
+          <ion-text class="text1">Tiempo de Envío:</ion-text>
+          <br />
+          <ion-badge>30 - 60min</ion-badge>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="no-padding" color="light">
+  <ion-button size="large" expand="full" color="light" no-margin (click)="checkoutOrder()" class="checkoutButton">
+    <ion-icon slot="start" name="wallet" color="dark"></ion-icon>
+    <ion-text color="dark">CheckOut</ion-text>
+  </ion-button>
+</ion-footer>
