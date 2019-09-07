@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref=""></ion-back-button>
+    <ion-title slot="start" class="welcome-title">Add New Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroupNewStore">
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Store Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storeName"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">RTN <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storeRTN"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Store Phone <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storePhone"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Store Address <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storeAddress"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Store Category <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storeCategory"></ion-input>
+      </div>
+    </ion-item>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Store Picture <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="storePicture"></ion-input>
+      </div>
+    </ion-item>
+  </form>
+  <ion-button class="btnSave" color="success" (click)="createNewStore()">Guardar</ion-button>
+</ion-content>

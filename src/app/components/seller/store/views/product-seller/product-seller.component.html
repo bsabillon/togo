@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref=""></ion-back-button>
+    <ion-title slot="start" class="welcome-title">Stores Products List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-chip outline color="dark" [routerLink]="[ '../../productSetting', storeId ]">
+    <ion-label>Add New Direction</ion-label>
+    <ion-icon color="success" name="add-circle"></ion-icon>
+  </ion-chip>
+  <div *ngFor="let productByStoreId of productByStoreIds">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{productByStoreId.productPictureURL}}">
+      </ion-avatar>
+      <ion-text><strong>{{productByStoreId.productName}}</strong></ion-text>
+      <ion-icon slot="end" color="success" name="trash" (click)="deleteUserProductsByStoreId(productByStoreId.productId)"></ion-icon>
+    </ion-item>
+  </div>
+</ion-content>

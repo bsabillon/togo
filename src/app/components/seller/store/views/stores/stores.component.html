@@ -1,14 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Store</ion-title>
+    <ion-back-button slot="start" defaultHref=""></ion-back-button>
+    <ion-title slot="start" class="welcome-title">Stores List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let store of stores">
-    <ion-avatar slot="start">
-      <img src="{{store.storePictureURL}}">
-    </ion-avatar>
-    <ion-text><strong>{{store.storeName}}</strong></ion-text>
-  </ion-item>
+  <div *ngFor="let store of stores">
+    <ion-item [routerLink]="[ '../productListSeller', store.storeId ]">
+      <ion-avatar slot="start">
+        <img src="{{store.storePictureURL}}">
+      </ion-avatar>
+      <ion-text><strong>{{store.storeName}}</strong></ion-text>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </div>
 </ion-content>

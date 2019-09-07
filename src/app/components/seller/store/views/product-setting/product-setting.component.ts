@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from 'src/app/services/data-api.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { product } from 'src/app/models/product';
 
 @Component({
@@ -16,11 +16,18 @@ export class ProductSettingComponent implements OnInit {
   productCategoryId: number;
   storeId: number;
 
-  constructor(public dataApi: DataApiService, public router: Router) { }
+  constructor(
+    public dataApi: DataApiService,
+    public router: Router,
+    public route: ActivatedRoute,
+    ) {
+      this.storeId = this.route.snapshot.params.storeId;
+     }
 
   ngOnInit() {}
 
   AddProduct() {
+    console.log(this.storeId);
     const product: product = {
       productId: null,
       productName: null,

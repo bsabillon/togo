@@ -63,6 +63,9 @@ export class CheckoutComponent implements OnInit {
     this.productService.getCartIdByEmail(this.user.userEmail).subscribe((cartID: CartId) => {
       this.userCartId = cartID.cartId;
       this.productService.makeOrder(this.userCartId, this.addressId, this.cardId).subscribe((order: IOrder) => {
+        const status = '2';
+        this.productService.changeOrderStatus(this.userCartId, status).subscribe((data) => {
+        });
       });
     });
     loader.onWillDismiss().then(async l => {

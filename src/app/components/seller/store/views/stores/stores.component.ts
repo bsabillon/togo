@@ -30,7 +30,7 @@ export class StoresComponent implements OnInit {
   }
 
   getStores() {
-    this.dataApiService.getStoresById(this.storeSellerId).subscribe((store: store) => {
+    this.dataApiService.getStoresBySellerId(this.storeSellerId).subscribe((store: store) => {
       this.dataApiService.store = store;
       this.stores = store;
     });

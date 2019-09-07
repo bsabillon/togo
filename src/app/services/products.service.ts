@@ -56,9 +56,9 @@ export class ProductsService {
     return this.http.put(`${this.endpoint}/updateCart/${cartId}/${addressID}/${cardId}`, body);
   }
 
-  // makeOrder(cartId: string, addressID: string, cardId: string) {
-  //   const body = `{"cartId": ${cartId}, "addressId": ${addressID}, "cardId": "${cardId}" }`;
-  //   return this.http.put(`${this.endpoint}/updateCart`, body, {headers: this.headers});
-  // }
+  changeOrderStatus(cartId: string, cartStatusId: string) {
+    const body = ['1'];
+    return this.http.put(`${this.endpoint}/updateCartStatus/${cartId}/${cartStatusId}`, body);
+  }
 
 }

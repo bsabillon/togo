@@ -1,0 +1,13 @@
+ion-content {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+ion-content > img {
+    width: 50%;
+}
+
+ion-content > ion-button {
+    margin-bottom: 10px;
+}
