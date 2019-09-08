@@ -6,20 +6,48 @@
   text-align: end;
 }
 
+.iconhome img {
+
+  width: 25%;
+  height: auto;
+  display:block;
+  margin:auto;
+
+}
+ion-icon {
+  color:rgb(16, 180, 16);
+ 
+  
+}
 ion-content .title {
   margin-left: 1rem;
   margin-bottom: 0;
   font-weight: 500;
   font-size: 1.5rem;
   color: var(--ion-color-dark);
+
+}
+ion-searchbar {
+  color:white;
+  --placeholder-color:rgb(255, 255, 255);
+  --icon-color:white;
 }
 
 ion-toolbar {
-  --padding-end: 10px;
-}
+  
+  --padding-end: 20px;
+  --background:rgb(39, 39, 39);
+  color:whitesmoke;
+ 
+};
+
+
+
 
 ion-toolbar>ion-text {
   margin-right: 5px;
+  
+  
 }
 
 ion-slides.promotions ion-card {
@@ -112,3 +140,5 @@ ion-card.card-brand .card-footer p {
 .welcome-title span {
   font-weight: 300;
 }
+
+

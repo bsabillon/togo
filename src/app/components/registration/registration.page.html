@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar >
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content padding>
+
+  <h2>¡Let us begin!</h2>
   <ion-item>
       <ion-label position="floating" > Name</ion-label>
       <ion-input type="text" [(ngModel)]="name" ></ion-input>
@@ -39,7 +41,7 @@
     <ion-datetime value="1990-02-19" [(ngModel)]="userDOB" placeholder="Select Date"></ion-datetime>
   </ion-item>  
   <br>
-<ion-button color="secondary" expand="block" (click)="OnSubmitRegister()">Register</ion-button>
+<ion-button expand="block" (click)="OnSubmitRegister()">Register</ion-button>
 <br>
 <p text-center routerLink="/login">I already have an account</p>
 

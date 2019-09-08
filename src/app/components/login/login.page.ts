@@ -12,7 +12,10 @@ import { user } from '../../models/user';
 export class LoginPage implements OnInit {
   alertMessage = '';
 
-  constructor(public authService: AuthService, public router: Router) { }
+  
+
+
+  constructor( public authService: AuthService, public router: Router) { }
   public email = '';
   public password = '';
 
@@ -34,5 +37,5 @@ export class LoginPage implements OnInit {
     });
   }
 
-
+  
 }

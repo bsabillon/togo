@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-  public promotions: any = ['1', '2', '3', '4', '5'];
+  public promotions: any = ['1'];
   public method: true;
   public textoBuscar = '';
   public user: user;
@@ -28,11 +28,17 @@ export class HomePage implements OnInit {
     width: 250
   };
 
+
+
+  
+
   constructor(
     public productsService: ProductsService,
     public router: Router,
     public modalController: ModalController,
-    ) { }
+    ) { 
+      
+    }
 
   ngOnInit() {
   }
@@ -69,4 +75,39 @@ export class HomePage implements OnInit {
     });
     return await modal.present();
   }
+
+
+
+  slider = [
+
+    {
+      title:'Ionic es grandioso',
+      description: 'Ionic is maravilloso porque si',
+      image:"https://i.ibb.co/60snpcr/PROMO1.jpg"
+    },
+
+    {
+      title:'Hola Mundo',
+      description: 'Ionic is maravilloso porque si',
+      image:"https://i.ibb.co/1bPpNfY/PROMO2.jpg9"
+    },
+    {
+      title:'Hola Mundo',
+      description: 'Ionic is maravilloso porque si',
+      image:"https://i.ibb.co/b1ZtpSs/PROMO3.jpg"
+    },
+    {
+      title:'Hola Mundo',
+      description: 'Ionic is maravilloso porque si',
+      image:"https://i.ibb.co/frytmhQ/PROMO4.jpg"
+    },
+    {
+      title:'Hola Mundo',
+      description: 'Ionic is maravilloso porque si',
+      image:"https://i.ibb.co/vzLNZ7F/PROMO5.jpg"
+    },
+    
+    
+
+  ];
 }
