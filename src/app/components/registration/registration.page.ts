@@ -1,3 +1,4 @@
+import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { user } from 'src/app/models/user';
@@ -10,21 +11,24 @@ import { Router } from '@angular/router';
 })
 export class RegistrationPage implements OnInit {
 
-  constructor(public authService: AuthService, public router: Router) { }
+  constructor(
+    public authService: AuthService,
+    private productService: ProductsService,
+    public router: Router) { }
 
   name: string;
   lastName: string;
   email: string;
-  password : string;
-  userDOB : string;
-  address : string;
+  password: string;
+  userDOB: string;
+  address: string;
   phone: string;
 
   ngOnInit() {
   }
 
-  OnSubmitRegister(){
-    let user: user = {
+  OnSubmitRegister() {
+    const user: user = {
       userName: this.name,
       userLastname: this.lastName,
       userEmail : this.email,
@@ -36,14 +40,13 @@ export class RegistrationPage implements OnInit {
     };
 
     this.authService.postNewUser(user).subscribe((data) => {
-      this.router.navigate(['/home']);
       this.authService.user = user;
       localStorage.setItem('user', JSON.stringify(user));
       console.log(data);
-      
+      this.productService.setNewCart(this.email).subscribe((newCart) => {
+        this.router.navigate(['/home']);
+      });
     });
-    
-
   }
 
 

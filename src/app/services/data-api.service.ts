@@ -53,8 +53,23 @@ export class DataApiService {
     return this.http.get(`${this.endpoint}/productCategoryId/${id}`);
   }
 
-  postNewProduct(product: product) {
-    return this.http.post(`${this.endpoint}/newproduct`, product);
-  }
+  // postNewProduct(product: product) {
+  //   return this.http.post(`${this.endpoint}/newproduct`, product);
+  // }
 
+  postNewProduct(
+    productDescription: string,
+    price: string,
+    storeId: string,
+    productQuantity: string,
+    productPictureURL: string,
+    productCategoryId: string,
+    // createdAt: string,
+    // updatedAt: string,
+    productName: string,
+    ) {
+    // tslint:disable-next-line: max-line-length
+    const body = `{"productDescription": "${productDescription}", "price": "${price}", "storeId": "${storeId}", "productQuantity": "${productQuantity}", "productPictureURL": "${productPictureURL}", "productCategoryId": "${productCategoryId}", "productName": "${productName}"}`;
+    return this.http.post(`${this.endpoint}/newproduct`, body, {headers: this.headers});
+  }
 }

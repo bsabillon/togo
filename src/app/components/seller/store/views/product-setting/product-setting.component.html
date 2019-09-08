@@ -8,27 +8,54 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label position="floating"> Description</ion-label>
-    <ion-input type="text" [(ngModel)]="productDescription"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> Price</ion-label>
-    <ion-input type="text" [(ngModel)]="price"></ion-input>
-  </ion-item>
+  <form [formGroup]="formGroupNewProduct">
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Product description <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="productDescription"></ion-input>
+      </div>
+    </ion-item>
 
-  <ion-item>
-    <ion-label position="floating"> Quantity</ion-label>
-    <ion-input type="text" [(ngModel)]="productQuantity"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> Picture</ion-label>
-    <ion-input type="text" [(ngModel)]="productPictureURL"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> Category</ion-label>
-    <ion-input type="text" [(ngModel)]="productCategoryId"></ion-input>
-  </ion-item>
-  <ion-button color="secondary" expand="block" (click)="AddProduct()">Add</ion-button>
-  <br>
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Product name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="productName"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Price <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="price"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Quantity <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="productQuantity"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Picture URL<ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="productPictureURL"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item class="itemsInputs" lines="none">
+      <ion-label position="stacked">Product Category Id <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <div>
+        <ion-input formControlName="productCategoryId"></ion-input>
+      </div>
+    </ion-item>
+  </form>
+  <ion-button color="success" expand="block" (click)="AddProduct()">Add</ion-button>
 </ion-content>

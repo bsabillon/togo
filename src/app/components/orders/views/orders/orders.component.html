@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item color="primary" lines="none">
+      <ion-menu-button slot="start"></ion-menu-button>
+      <ion-title>Ordenes</ion-title>
+    </ion-item>
+    <ion-segment [(ngModel)]="category" scrollable>
+      <ion-segment-button value="willDelivery" checked>
+        Pendiente
+      </ion-segment-button>
+      <ion-segment-button value="delivery">
+        Entregado
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="category">
+    <ion-list *ngSwitchCase="'willDelivery'" padding>
+      <div *ngFor="let orderPending of orderPendingInfo">
+        <ion-item lines="none">
+          <ion-text color="success" slot="start"><strong>Orden en camino</strong></ion-text>
+          <ion-chip outline color="primary" slot="end" routerLink="orderDetail">
+            <ion-icon name="basket"></ion-icon>
+            <ion-label>{{orderPending.noproductos}}</ion-label>
+          </ion-chip>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-text><strong>Orden #:</strong></ion-text>
+          <div class="numberSelectedProducts">
+            <ion-label>{{orderPending.cartId}}</ion-label>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-text>Total: L {{orderPending.total}}</ion-text>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'delivery'" padding>
+      <div *ngFor="let orderReceived of orderReceivedInfo">
+        <ion-item lines="none">
+          <ion-text color="primary" slot="start"><strong>Orden entregada</strong></ion-text>
+          <ion-chip outline color="primary" slot="end" routerLink="orderDetail">
+            <ion-icon name="basket"></ion-icon>
+            <ion-label>{{orderReceived.noproductos}}</ion-label>
+          </ion-chip>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-text><strong>Orden #:</strong></ion-text>
+          <div class="numberSelectedProducts">
+            <ion-label>{{orderReceived.cartId}}</ion-label>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-text>Total: L {{orderReceived.total}}</ion-text>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

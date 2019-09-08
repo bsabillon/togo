@@ -12,3 +12,9 @@ export interface IOrder {
     cardDescription: string;
     statusDescription: string;
 }
+
+export interface IOrdersData {
+    total: string;
+    noproductos: string;
+    cartId: string;
+}

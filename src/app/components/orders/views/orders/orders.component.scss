@@ -1,0 +1,29 @@
+:host {
+    ion-toolbar {
+        text-align: center;
+        justify-items: center;
+    }
+
+    ion-content {
+        --background: var(--ion-color-light);
+    }
+
+    ion-card {
+        &.no-radius {
+            border-radius: 0;
+        }
+    }
+}
+
+.itemContainer {
+    border-radius: 0;
+    border-bottom: 1px dotted var(--ion-color-medium);
+}
+
+.numberSelectedProducts {
+    margin-left: 6px;
+    border-radius: 4px;
+    border: 1px solid red;
+    padding-left: 5px;
+    padding-right: 5px;
+}

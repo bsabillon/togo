@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-back-button defaultHref="" slot="start"></ion-back-button>
+      <ion-title>Detalle de la orden</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card class="orderDetailCard">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="calendar"></ion-icon> {{date_added}}
+        </ion-card-subtitle>
+        <ion-card-title>Datos Personales:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="orderDetailItem" lines="none">
+          <ion-text>
+            <strong>Dirección: </strong>{{payment_address}}
+          </ion-text>
+        </ion-item>
+        <ion-item class="orderDetailItem" lines="none">
+          <ion-text>
+            <strong>Método de pago: </strong>{{payment_method}}
+          </ion-text>
+        </ion-item>
+        <ion-item class="orderDetailItem" lines="none">
+          <ion-text>
+            <strong>Estado: </strong>{{order_status}}
+          </ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="orderDetailCard">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="list-box"></ion-icon>
+          {{orderRestaurant}}
+        </ion-card-subtitle>
+        <ion-card-title>Productos Comprados:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngFor="let ordersProduct of ordersProducts">
+        <ion-item class="orderDetailItem">
+          <ion-label>
+            <p><strong>Nombre: </strong>{{ordersProduct.name}}</p>
+            <p><strong>Cantidad: </strong>{{ordersProduct.quantity}}</p>
+            <p><strong>
+                <ion-icon color="primary" name="list"></ion-icon> Opciones:
+              </strong></p>
+            <div class="orderDetailItemOptions">
+              <ion-item *ngFor="let option of ordersProduct.option" lines="none">
+                <ion-label>
+                  <p><strong>Tipo: </strong>{{option.name}}</p>
+                  <p><strong>Detalle: </strong>{{option.value}}</p>
+                </ion-label>
+              </ion-item>
+            </div>
+            <p><strong>Precio: </strong>{{ordersProduct.price}}</p>
+            <p><strong>Sub-Total: </strong>{{ordersProduct.total}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="orderDetailCard">
+      <ion-card-header>
+        <ion-card-title>Totales:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="orderDetailItem" lines="none" *ngFor="let orderTotal of orderTotals">
+          <ion-text>
+            <strong>{{orderTotal.title}}: </strong>{{orderTotal.text}}
+          </ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

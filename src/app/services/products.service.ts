@@ -61,4 +61,9 @@ export class ProductsService {
     return this.http.put(`${this.endpoint}/updateCartStatus/${cartId}/${cartStatusId}`, body);
   }
 
+  setNewCart(userEmail: string) {
+    const body = `{"userEmail": "${userEmail}", "cartStatusId": "1"}`;
+    return this.http.post(`${this.endpoint}/newCart`, body, {headers: this.headers});
+  }
+
 }

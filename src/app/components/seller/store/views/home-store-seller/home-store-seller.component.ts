@@ -3,7 +3,6 @@ import { AuthService } from './../../../../../services/auth.service';
 import { ToastController } from '@ionic/angular';
 import { DataApiService } from './../../../../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
-import { user } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home-store-seller',
