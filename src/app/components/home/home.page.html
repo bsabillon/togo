@@ -1,15 +1,24 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+
+  <ion-toolbar class="primero">
     <ion-menu-button slot="start"></ion-menu-button>
-    <ion-title slot="start" class="welcome-title"><strong>ToGo</strong></ion-title>
+    
+      <div class="iconhome">
+       <img
+       src="https://i.ibb.co/rywwm10/Sin-t-tulo-1-Recuperado.png" alt=""/>
+      </div>
     <ion-icon name="cart" slot="end" size="large" (click)="presentModalCart()"></ion-icon>
     <ion-badge slot="end">{{counterCartItems}}</ion-badge>
   </ion-toolbar>
+
+
   <ion-toolbar>
-    <ion-searchbar showCancelButton="always" animated (ionChange)="search($event)"></ion-searchbar>
+    <ion-searchbar  showCancelButton="always" animated (ionChange)="search($event)"></ion-searchbar>
   </ion-toolbar>
+
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content #pageContent>
   <h2 class="title">Promotions</h2>
   <ion-slides pager="true" [options]="slideOpts" class="promotions">
@@ -27,6 +36,28 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
+=======
+
+<ion-content #pageContent class="masters">
+
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let slide of slider">
+          <img [src]="slide.image"/>
+        </ion-slide>
+  
+      </ion-slides>
+
+
+  
+
+    
+
+
+
+
+
+
+>>>>>>> origin/Revamp
 
   <h2 class="title">Assorted Products</h2>
   <div *ngFor="let product of products | filtro:textoBuscar">

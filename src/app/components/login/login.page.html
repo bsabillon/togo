@@ -1,5 +1,6 @@
+
 <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar >
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -11,19 +12,25 @@
   
 
 <ion-content padding >
-  <img class="icon" src="assets/icon/2go.png" alt="">
+  <img class="icon" src="https://i.ibb.co/YNNGPFp/logo2222.png" alt="">
   
     <ion-item>
       <br>
-        <ion-label position="floating" > Email</ion-label>
+        <ion-label color="dark" position="floating" > Email</ion-label>
         <ion-input type="text" [(ngModel)]="email"  name="email"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label position="floating" > Password</ion-label>
+        <ion-label color="dark" position="floating" > Password</ion-label>
+
         <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
     </ion-item>
       <br>
-    <ion-button expand="block" (click)="getUserByEmail()"> Login</ion-button>
+   
+    <ion-button expand="block"  (click)="getUserByEmail()"> Login</ion-button>
     
-  <p text-center routerLink="/registration">No tengo cuenta</p>         
+    <ion-button class="NoCuenta" routerLink="/registration" expand="block"  color="light">Create an account</ion-button>
+ 
+    
+  
+  
 </ion-content>
