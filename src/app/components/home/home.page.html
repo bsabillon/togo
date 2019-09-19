@@ -1,33 +1,25 @@
-<ion-header >
+<ion-header>
 
   <ion-toolbar class="primero">
     <ion-menu-button slot="start"></ion-menu-button>
-    
-      <div class="iconhome">
-       <img
-       src="https://i.ibb.co/rywwm10/Sin-t-tulo-1-Recuperado.png" alt=""/>
-      </div>
+
+    <div class="iconhome">
+      <img src="https://i.ibb.co/rywwm10/Sin-t-tulo-1-Recuperado.png" alt="" />
+    </div>
     <ion-icon name="cart" slot="end" size="large" (click)="presentModalCart()"></ion-icon>
     <ion-badge slot="end">{{counterCartItems}}</ion-badge>
   </ion-toolbar>
-
-
   <ion-toolbar>
-    <ion-searchbar  showCancelButton="always" animated (ionChange)="search($event)"></ion-searchbar>
+    <ion-searchbar showCancelButton="always" animated (ionChange)="search($event)"></ion-searchbar>
   </ion-toolbar>
-
 </ion-header>
-
-<<<<<<< HEAD
 <ion-content #pageContent>
   <h2 class="title">Promotions</h2>
-  <ion-slides pager="true" [options]="slideOpts" class="promotions">
+  <!-- <ion-slides pager="true" [options]="slideOpts" class="promotions">
     <ion-slide *ngFor="let promotion of promotions">
       <ion-card class="ion-no-padding">
         <ion-card-content>
-          <img
-            src="http://www.pepsico.cl/images/librariesprovider40/default-album/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg?sfvrsn=1:large"
-            alt="">
+          <img [src]="slide.image" alt="">
         </ion-card-content>
         <ion-card-header>
           <ion-card-title color="white">NUEVA WOW BOX </ion-card-title>
@@ -35,29 +27,13 @@
         </ion-card-header>
       </ion-card>
     </ion-slide>
+  </ion-slides> -->
+
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let slide of slider">
+      <img [src]="slide.image">
+    </ion-slide>
   </ion-slides>
-=======
-
-<ion-content #pageContent class="masters">
-
-    <ion-slides pager="true">
-        <ion-slide *ngFor="let slide of slider">
-          <img [src]="slide.image"/>
-        </ion-slide>
-  
-      </ion-slides>
-
-
-  
-
-    
-
-
-
-
-
-
->>>>>>> origin/Revamp
 
   <h2 class="title">Assorted Products</h2>
   <div *ngFor="let product of products | filtro:textoBuscar">
